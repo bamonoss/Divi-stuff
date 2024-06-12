@@ -5,8 +5,6 @@
 selector .glitch {
   position: relative;
   display: inline-block;
-  background-color: #0f0f0f;
-  color: white;
 }
 
 selector .glitch::before, selector .glitch::after {
