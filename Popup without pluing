@@ -1,0 +1,14 @@
+// Copier coller dans <header>
+
+<script type="text/javascript"> jQuery(document).ready(function(t){t('div:not(.et_mobile_menu) .lightbox-content, div:not(.et_mobile_menu) [class*="lightbox-content-"]').addClass("mfp-hide"),t("div:not(.et_mobile_menu) .lightbox-trigger").magnificPopup({items:{src:"div:not(.et_mobile_menu) .lightbox-content",type:"inline"}}),t('div:not(.et_mobile_menu) [class*="lightbox-trigger-"]').each(function(){var i=".lightbox-content-"+Array.prototype.find.call(this.classList,function(t){return t.indexOf("lightbox-trigger-")>-1}).split("lightbox-trigger-")[1];t(this).magnificPopup({items:{src:i,type:"inline"}})}),t(this).click(function(){t(".mfp-wrap").attr("id","et-boc")}),t('[class*="lightbox-content"]').prepend('<div class="lightbox-overlay"></div>')});</script>
+<script src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js" async></script>
+<link rel="stylesheet" href="/wp-content/themes/Divi/includes/builder/styles/magnific_popup.css">
+
+/****** Copier coller dans module trigger *******/
+[class*="lightbox-trigger-"] {cursor:pointer;}
+[class*="lightbox-content-"] {position:relative; z-index: unset !important;}
+[class*="lightbox-content-"] .mfp-close {color:#999999 !important;}
+[class*="lightbox-content-"] .mfp-close:active {top:0px !important;}
+
+Create your trigger element (button, CTA, image, blurb, etc) and add the class lightbox-trigger-element
+Create the Divi popup content (any section, row, or module) and add the class lightbox-content-element
