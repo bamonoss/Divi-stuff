@@ -37,3 +37,28 @@ document.addEventListener('DOMContentLoaded', function() {
 // À copier dans le texte de module text
 
 <h1 class="animate-text">
+
+/* Titre slide-in */
+
+.animate-text {
+  position: relative;
+  opacity: 0; /* Initialement caché */
+}
+
+.animate-text.visible {
+  opacity: 1; /* Devenir visible quand dans la vue */
+}
+
+.animate-text span {
+  display: inline-block;
+  animation: slideIn 0.8s both;
+  transform: translateY(20%);
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
