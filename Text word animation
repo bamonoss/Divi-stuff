@@ -1,14 +1,16 @@
 <script>
-
-const texts = document.querySelectorAll('.animate-text');
+document.addEventListener('DOMContentLoaded', function() {
+    const texts = document.querySelectorAll('.animate-text');
 
     // Fonction pour initialiser l'animation des textes
     const initAnimation = (text) => {
         const words = text.textContent.split(' ');
-        text.innerHTML = words.map((word, index) => `<span style="animation-delay: ${0.5 + index * 0.25}s">${word}</span>`).join(' ');
+        text.innerHTML = words.map((word, index) => 
+            `<span style="animation-delay: ${0.5 + index * 0.25}s">${word}</span>`
+        ).join(' ');
 
         // Définir le délai d'animation pour l'élément pseudo ::after en fonction du nombre de mots
-        const totalAnimationTime = 0.5 + words.length * 0.25 + 0.8; // Ajuste cette formule si nécessaire
+        const totalAnimationTime = 0.5 + words.length * 0.25 + 0.8; // Ajuster cette formule si nécessaire
         text.style.setProperty('--image-animation-delay', `${totalAnimationTime}s`);
     };
 
@@ -18,7 +20,7 @@ const texts = document.querySelectorAll('.animate-text');
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 initAnimation(entry.target);
-                observer.unobserve(entry.target); // Arrête d'observer une fois que l'animation est lancée
+                observer.unobserve(entry.target); // Arrêter d'observer une fois que l'animation est lancée
             }
         });
     }, { threshold: 0.1 });
@@ -27,8 +29,9 @@ const texts = document.querySelectorAll('.animate-text');
     texts.forEach(text => {
         observer.observe(text);
     });
-
+});
 </script>
+
 
 
 // À copier dans le texte de module text
