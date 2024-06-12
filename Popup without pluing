@@ -1,8 +1,46 @@
 // Copier coller dans <header>
 
-<script type="text/javascript"> jQuery(document).ready(function(t){t('div:not(.et_mobile_menu) .lightbox-content, div:not(.et_mobile_menu) [class*="lightbox-content-"]').addClass("mfp-hide"),t("div:not(.et_mobile_menu) .lightbox-trigger").magnificPopup({items:{src:"div:not(.et_mobile_menu) .lightbox-content",type:"inline"}}),t('div:not(.et_mobile_menu) [class*="lightbox-trigger-"]').each(function(){var i=".lightbox-content-"+Array.prototype.find.call(this.classList,function(t){return t.indexOf("lightbox-trigger-")>-1}).split("lightbox-trigger-")[1];t(this).magnificPopup({items:{src:i,type:"inline"}})}),t(this).click(function(){t(".mfp-wrap").attr("id","et-boc")}),t('[class*="lightbox-content"]').prepend('<div class="lightbox-overlay"></div>')});</script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        // Masquer le contenu des lightboxes au chargement de la page
+        $('div:not(.et_mobile_menu) .lightbox-content, div:not(.et_mobile_menu) [class*="lightbox-content-"]').addClass("mfp-hide");
+
+        // Initialiser Magnific Popup pour les triggers généraux
+        $("div:not(.et_mobile_menu) .lightbox-trigger").magnificPopup({
+            items: {
+                src: "div:not(.et_mobile_menu) .lightbox-content",
+                type: "inline"
+            }
+        });
+
+        // Initialiser Magnific Popup pour les triggers spécifiques
+        $('div:not(.et_mobile_menu) [class*="lightbox-trigger-"]').each(function() {
+            var contentClass = ".lightbox-content-" + Array.prototype.find.call(this.classList, function(className) {
+                return className.indexOf("lightbox-trigger-") > -1;
+            }).split("lightbox-trigger-")[1];
+
+            $(this).magnificPopup({
+                items: {
+                    src: contentClass,
+                    type: "inline"
+                }
+            });
+        });
+
+        // Ajouter un ID à l'élément wrap de Magnific Popup lorsqu'il est cliqué
+        $(this).click(function() {
+            $(".mfp-wrap").attr("id", "et-boc");
+        });
+
+        // Ajouter un overlay aux contenus des lightboxes
+        $('[class*="lightbox-content"]').prepend('<div class="lightbox-overlay"></div>');
+    });
+</script>
+
+<!-- Chargement asynchrone des scripts et styles pour Magnific Popup -->
 <script src="/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js" async></script>
 <link rel="stylesheet" href="/wp-content/themes/Divi/includes/builder/styles/magnific_popup.css">
+
 
 /****** Copier coller dans module trigger *******/
 [class*="lightbox-trigger-"] {cursor:pointer;}
