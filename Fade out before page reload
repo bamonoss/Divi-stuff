@@ -1,0 +1,6 @@
+<script>
+window.onbeforeunload = function() {
+    document.body.classList.add('fade-out');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+</script>
