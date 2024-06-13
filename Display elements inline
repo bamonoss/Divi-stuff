@@ -1,0 +1,6 @@
+/* Paste in column */
+
+display: flex;
+flex-direction: row;
+gap: 20px;
+justify-content: center
