@@ -1,0 +1,9 @@
+// Gestion du survol des images pour afficher le titre
+  $("img").hover(function() {
+    var title = $(this).attr("title");
+    $(this).data("title", title).attr("title", "");
+  },
+  function() {
+    var title = $(this).data("title");
+    $(this).attr("title", title);
+  });
