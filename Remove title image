@@ -1,9 +1,13 @@
-// Gestion du survol des images pour afficher le titre
-  $("img").hover(function() {
-    var title = $(this).attr("title");
-    $(this).data("title", title).attr("title", "");
-  },
-  function() {
-    var title = $(this).data("title");
-    $(this).attr("title", title);
-  });
+<script>
+jQuery(document).ready(function($) {
+    $("img").mouseenter(function() {
+        let $notooltip = $(this).attr("title");
+        $(this).attr("notooltip", $notooltip);
+        $(this).attr("title", "");
+    }).mouseleave(function() {
+        let $notooltip = $(this).attr("notooltip");
+        $(this).attr("title", $notooltip);
+        $(this).removeAttr("notooltip");
+    });
+});
+</script>
