@@ -1,7 +1,7 @@
 /*Box trigger in box*/
 
 <style>
-#text_media_trigger {
+#box {
     display: none; /* Masqué par défaut */
     position: fixed; /* Utilisez 'fixed' pour qu'il ne soit pas contraint par les parents en position relative */
     z-index: 100; /* Au-dessus des autres éléments */
@@ -13,10 +13,10 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    let triggerModules = document.querySelectorAll('.plus_btn_photos');
+    let triggerModules = document.querySelectorAll('.btn_trigger');
 
     triggerModules.forEach(module => {
-        let tooltipText = document.querySelector('.text_trigger_photos'); // Sélectionnez le module texte à afficher
+        let tooltipText = document.querySelector('.box_trigger'); // Sélectionnez le module texte à afficher
 
         module.addEventListener('mouseover', () => {
             tooltipText.style.display = 'block'; // Afficher au survol
