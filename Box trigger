@@ -1,0 +1,38 @@
+/*Box trigger in box*/
+
+<style>
+#text_media_trigger {
+    display: none; /* Masqué par défaut */
+    position: fixed; /* Utilisez 'fixed' pour qu'il ne soit pas contraint par les parents en position relative */
+    z-index: 100; /* Au-dessus des autres éléments */
+    pointer-events: none; /* Ignore les événements de la souris pour permettre l'interaction avec les éléments sous-jacents */
+    /* Ne pas écraser les styles de Divi ici pour conserver la mise en page */
+}
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let triggerModules = document.querySelectorAll('.plus_btn_photos');
+
+    triggerModules.forEach(module => {
+        let tooltipText = document.querySelector('.text_trigger_photos'); // Sélectionnez le module texte à afficher
+
+        module.addEventListener('mouseover', () => {
+            tooltipText.style.display = 'block'; // Afficher au survol
+        });
+
+        module.addEventListener('mousemove', (e) => {
+            let mouseX = e.clientX;
+            let mouseY = e.clientY;
+            tooltipText.style.left = mouseX + 'px';
+            tooltipText.style.top = mouseY + 'px';
+        });
+
+        module.addEventListener('mouseout', () => {
+            tooltipText.style.display = 'none'; // Masquer quand on ne survole plus
+        });
+    });
+});
+
+</script>
