@@ -4,3 +4,11 @@ window.onbeforeunload = function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 </script>
+
+<style>
+.fade-out {
+    opacity: 0;
+	background-color: #040508; 
+    transition: all 0.2s ease-out;
+}
+>/style>
