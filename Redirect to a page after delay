@@ -1,0 +1,7 @@
+<script>
+	window.onload = function(){
+	 setTimeout(function(){
+	   window.location.href = "http://www.mysite.com/new-page";
+	 }, 2000);
+	};
+</script>
