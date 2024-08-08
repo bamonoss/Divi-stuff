@@ -1,0 +1,12 @@
+.et_pb_fullwidth_menu .et_pb_menu__menu, .et_pb_menu .et_pb_menu__menu {
+    display: block!important;
+}
+.et_mobile_nav_menu {
+    display: none!important;
+}
+@media screen and (max-width: 768px) {
+    .et_pb_module.et_pb_menu, .et_pb_module.et_pb_menu li {
+        margin-left: auto!important;
+        margin-right: auto!important;
+    }
+}
