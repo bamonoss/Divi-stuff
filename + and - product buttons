@@ -1,0 +1,101 @@
+// À copier dans <head>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.quantity').forEach(function(quantityWrapper) {
+        var input = quantityWrapper.querySelector('.qty');
+        var btnMinus = document.createElement('button');
+        var btnPlus = document.createElement('button');
+
+        btnMinus.type = 'button';
+        btnPlus.type = 'button';
+
+        btnMinus.className = 'minus';
+        btnPlus.className = 'plus';
+
+        btnMinus.textContent = '-';
+        btnPlus.textContent = '+';
+
+        btnMinus.addEventListener('click', function() {
+            var value = parseInt(input.value) - 1;
+            input.value = value > 0 ? value : 0;
+            input.dispatchEvent(new Event('change'));
+        });
+
+        btnPlus.addEventListener('click', function() {
+            input.value = parseInt(input.value) + 1;
+            input.dispatchEvent(new Event('change'));
+        });
+
+        quantityWrapper.insertBefore(btnMinus, input);
+        quantityWrapper.appendChild(btnPlus);
+    });
+});
+</script>
+
+
+
+/* Plus and less button product */
+
+.woocommerce .quantity {
+  display: flex;
+  align-items: center;
+  border:solid 1px black;
+  border-radius:100px;
+  justify-content:center;
+  padding: 0 10px;
+  height: 50px;
+  min-width:120px!important;
+}
+
+.woocommerce .quantity input.qty {
+  text-align: center;
+  background-color:transparent!important;
+  font-size:1.5em!important;
+  color:black!important;
+  width:50px!important;
+	padding:0!important;
+}
+
+.woocommerce .quantity input[type="number"]::-webkit-outer-spin-button,
+.woocommerce .quantity input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+    margin: 0;
+}
+
+.woocommerce .quantity input[type="number"] {
+  -moz-appearance: textfield; /* Pour Firefox */
+}
+
+.woocommerce .quantity .minus,
+.woocommerce .quantity .plus {
+  width:50px!important;
+  height:50px!important;
+  background-color: transparent!important;
+  color: #FF7400!important;
+  border: none!important;
+  border-radius:100%!important;  
+  align-items: stretch!important;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 2em!important;
+  font-weight: bold!important;
+  line-height: 1;
+}
+
+.woocommerce .archive_page .single_add_to_cart_button{
+  font-family:'etModules';
+  cursor:pointer;
+  max-width:50%!important;
+}
+
+
+.woocommerce form.cart{
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  gap: 5%;
+  align-items:center;
+  margin-top:10px;
+}
