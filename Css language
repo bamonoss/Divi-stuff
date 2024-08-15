@@ -1,0 +1,7 @@
+html[lang="fr-CA"] #hide-en{
+ display: none;
+}
+
+html[lang="en-CA"] #hide-fr{
+ display: none;
+}
