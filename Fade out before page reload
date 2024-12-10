@@ -11,4 +11,4 @@ window.onbeforeunload = function() {
 	background-color: #040508; 
     transition: all 0.2s ease-out;
 }
->/style>
+</style>
