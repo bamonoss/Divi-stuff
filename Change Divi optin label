@@ -1,0 +1,11 @@
+<script type="text/javascript">
+jQuery(function($){
+    if (document.documentElement.lang === "fr-CA") { // Vérifie si la langue est en français
+        $("#et_pb_signup_firstname").attr("placeholder", "Prénom");
+        $("#et_pb_signup_lastname").attr("placeholder", "Nom");
+        $("#et_pb_signup_email").attr("placeholder", "Adresse e-mail");
+        $("#et_pb_signup_XXXX").attr("placeholder", "Entreprise"); // Remplace XXXX par l'ID du champ Company
+        $(".et_pb_promo_button").text("S'inscrire");
+    }
+});
+</script>
