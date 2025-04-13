@@ -1,0 +1,31 @@
+✅ Étapes pour créer un compte admin WordPress via un fichier PHP
+Dans ton FTP, à la racine du site (à côté de wp-config.php), crée un fichier que tu appelles par exemple :
+ajout-admin.php
+
+Colle ce code complet dedans :
+
+<?php
+require_once('wp-load.php');
+
+$username = 'nouveladmin';
+$password = 'MotDePasseUltraSolide123!';
+$email = 'admin@tonsite.com';
+
+if (!username_exists($username) && !email_exists($email)) {
+    $user_id = wp_create_user($username, $password, $email);
+    $user = new WP_User($user_id);
+    $user->set_role('administrator');
+    echo "✅ Utilisateur admin créé : $username / $password";
+} else {
+    echo "⚠️ Le nom d'utilisateur ou l'email existe déjà.";
+}
+?>
+
+Ensuite, ouvre ce fichier dans ton navigateur :
+
+arduino
+Copier
+Modifier
+https://tonsite.com/ajout-admin.php
+Une fois que tu vois le message de succès :
+➡️ Efface immédiatement le fichier du FTP (très important pour la sécurité).
