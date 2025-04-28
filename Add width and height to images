@@ -1,4 +1,4 @@
-Ajoute ça dans ton functions.php (à la fin) ou dans un petit plugin de fonctions :
+// Ajoute ça dans ton functions.php (à la fin) ou dans un petit plugin de fonctions :
 
 // 🔥 Ajouter automatiquement width et height aux images
 add_filter( 'the_content', function( $content ) {
