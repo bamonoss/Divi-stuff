@@ -1,0 +1,21 @@
+Ajoute ça dans ton functions.php (à la fin) ou dans un petit plugin de fonctions :
+
+// 🔥 Ajouter automatiquement width et height aux images
+add_filter( 'the_content', function( $content ) {
+    if ( false === strpos( $content, '<img' ) ) {
+        return $content;
+    }
+    return preg_replace_callback( '/<img[^>]+>/', function( $matches ) {
+        $img = $matches[0];
+        if ( strpos( $img, ' width=' ) !== false && strpos( $img, ' height=' ) !== false ) {
+            return $img;
+        }
+        if ( preg_match( '/src=["\']([^"\']+)["\']/', $img, $src ) ) {
+            $size = @getimagesize( $src[1] );
+            if ( $size ) {
+                $img = preg_replace( '/<img/', '<img width="' . $size[0] . '" height="' . $size[1] . '"', $img, 1 );
+            }
+        }
+        return $img;
+    }, $content );
+}, 99 );
