@@ -1,4 +1,4 @@
-// Widget video Dashbord
+// Widget video Dashbord (à coller dans functions.php)
 
 function ajouter_widget_video_dashboard() {
     wp_add_dashboard_widget(
