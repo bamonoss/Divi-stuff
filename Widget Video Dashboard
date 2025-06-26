@@ -10,7 +10,7 @@ function ajouter_widget_video_dashboard() {
 
 function afficher_video_dashboard_widget() {
     echo '<div style="text-align:center">';
-    echo '<iframe src="" width="100%" height="315" allow="autoplay"></iframe>';
+    echo '<iframe src="https://drive.google.com/file/d/TON_ID_DE_VIDEO/preview" width="100%" height="315" allow="autoplay"></iframe>';
     echo '</div>';
 }
 
