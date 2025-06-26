@@ -1,3 +1,5 @@
+// Widget video Dashbord
+
 function ajouter_widget_video_dashboard() {
     wp_add_dashboard_widget(
         'video_dashboard_widget',          // ID du widget
