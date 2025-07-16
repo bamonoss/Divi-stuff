@@ -1,4 +1,4 @@
-//ADD THIS TO FUNCTIONS.PHP
+//ADD THIS TO FUNCTIONS.PHP TO UPLOAD CUSTOM FONT
 
 function my_custom_upload_mimes($mimes = array()) {
   $mimes['ttf'] = "font/ttf";
