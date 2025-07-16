@@ -1,0 +1,8 @@
+//ADD THIS TO FUNCTIONS.PHP
+
+function my_custom_upload_mimes($mimes = array()) {
+  $mimes['ttf'] = "font/ttf";
+  $mimes['otf'] = "font/otf";
+  return $mimes;
+}
+add_filter('upload_mimes', 'my_custom_upload_mimes');
