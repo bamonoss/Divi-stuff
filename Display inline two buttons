@@ -1,5 +1,8 @@
-/*Paste in column*/
-
 selector .et_pb_button_module_wrapper {
-    display: inline-block;
+	display: inline-block; 
+  margin:0 5px;
+}
+
+selector {
+	text-align: center !important;
 }
