@@ -33,10 +33,6 @@ $(window).scroll(function() {
 </script>
 
 <style>
-
-#main-content{
-margin-top: 7vw;
-}
  
 .hide-header {
 opacity: 0;
