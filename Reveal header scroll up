@@ -14,7 +14,7 @@ $(window).scroll(function() {
  
     var scrollMovement = $(window).scrollTop();
    
-    if (topPosition < 200 ){
+    if (topPosition < 10 ){
     }
     else{
     if(scrollMovement > topPosition) {
