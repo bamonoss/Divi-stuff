@@ -22,6 +22,12 @@
     100% { transform: translateX(-50%); } /* Ajustez ce pourcentage en fonction de la largeur du contenu pour un défilement fluide */
 }
 
+@media all and (max-width: 980px) {
+    .marquee-text {
+        animation: scrollText 5s linear infinite;
+    }
+}
+
 /* ELÉMENT PRINCIPAL CSS MODULE IF TEXT STROKE */
 
 -webkit-text-stroke: 2px #f2e6dc;
