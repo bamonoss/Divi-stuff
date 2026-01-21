@@ -1,0 +1,66 @@
+//ADD TO A CODE MODULE 
+
+<style>
+#popup-home {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#popup-home.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("popup-home");
+
+  if (!popup) {
+    console.warn("⚠️ Section #popup-home introuvable.");
+    return;
+  }
+
+  const STORAGE_KEY = "popup-last-shown";
+  const ONE_DAY = 24 * 60 * 60 * 1000; // 24h en ms
+  const now = Date.now();
+  const lastShown = localStorage.getItem(STORAGE_KEY);
+
+  // Si déjà vu il y a moins de 24h → on bloque
+  if (lastShown && now - parseInt(lastShown, 10) < ONE_DAY) {
+    return;
+  }
+
+  // Affiche le popup après 2 secondes
+  setTimeout(function () {
+    popup.classList.add("show");
+    localStorage.setItem(STORAGE_KEY, now);
+  }, 2000);
+
+  // Boutons de fermeture
+  document.querySelectorAll(".close-popup").forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      popup.classList.remove("show");
+    });
+  });
+
+  // Clic à l'extérieur = fermeture
+  popup.addEventListener("click", function (e) {
+    if (e.target === popup) {
+      popup.classList.remove("show");
+    }
+  });
+});
+</script>
